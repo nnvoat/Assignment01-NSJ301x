@@ -13,6 +13,6 @@ router.get("/discover", movieController.getMoviesByGenre);
 
 router.post("/video", movieController.postMovieVideo);
 
-router.get("/search", movieController.getMovieSearch);
+router.post("/search", movieController.postMovieSearch);
 
 module.exports = router;

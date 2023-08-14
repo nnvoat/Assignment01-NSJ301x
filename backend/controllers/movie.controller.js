@@ -179,14 +179,14 @@ const postMovieVideo = (req, res) => {
 };
 
 // 8. Tìm kiếm theo từ khoá
-// [GET] /api/movies/search
-const getMovieSearch = (req, res) => {
+// [POST] /api/movies/search
+const postMovieSearch = (req, res) => {
   try {
     // Danh sách phim
     const moviesData = Movies.all();
 
     // Lấy query từ query parameter của yêu cầu GET
-    const query = req.query.query;
+    const query = req.body.query;
 
     // Chuyển kiểu dạng chữ sang chữ thường để không phân biệt chữ hoa và chữ thường
     const queryToLowerCase = query.toLowerCase();
@@ -222,5 +222,5 @@ module.exports = {
   getMovieTopRate,
   getMoviesByGenre,
   postMovieVideo,
-  getMovieSearch,
+  postMovieSearch,
 };
